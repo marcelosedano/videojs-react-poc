@@ -16,11 +16,11 @@ export default class VideoPlayer extends Component {
 
   render() {
     return (
-      <div>
-        <div data-vjs-player>
-          <video ref={node => this.videoNode = node} className="video-js vjs-fluid"></video>
-        </div>
+      <div data-vjs-player>
+        <video ref={node => this.videoNode = node} className="video-js">
+          <track kind="captions" src="//d2zihajmogu5jn.cloudfront.net/elephantsdream/captions.en.vtt" srcLang="en" label="English" />
+        </video>
       </div>
-    )
+    );
   }
 }
