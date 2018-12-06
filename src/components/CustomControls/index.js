@@ -1,15 +1,12 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import CustomControls from './CustomControls';
+import ReactDOM from 'react-dom';
+import Button from '../Button';
+import { Wrapper } from './style';
 
-class CustomControlsContainer extends Component {
-  render() {
-    return <CustomControls />;
-  }
-}
+const CustomControls = () => (
+  <Wrapper>
+    <Button label="Transcript" onClick={() => console.log('Clicked on transcript button!')} />
+  </Wrapper>
+);
 
-CustomControlsContainer.propTypes = {
-  vjsComponent: PropTypes.object.isRequired,
-};
-
-export default CustomControlsContainer;
+export default CustomControls;

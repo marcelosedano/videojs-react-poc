@@ -3,7 +3,9 @@ import PropTypes from 'prop-types';
 import { Wrapper } from './style';
 
 const Button = props => (
-  <button onClick={props.onClick}>{props.label}</button>
+  <Wrapper>
+    <button onClick={props.onClick}>{props.label}</button>
+  </Wrapper>
 );
 
 Button.propTypes = {
