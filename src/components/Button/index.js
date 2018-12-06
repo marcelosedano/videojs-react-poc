@@ -1,16 +1,7 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { Wrapper } from './style';
+import styled from 'styled-components';
 
-const Button = props => (
-  <Wrapper>
-    <button onClick={props.onClick}>{props.label}</button>
-  </Wrapper>
-);
-
-Button.propTypes = {
-  onClick: PropTypes.func.isRequired,
-  label: PropTypes.string.isRequired,
-};
+const Button = styled.button`
+  cursor: pointer;
+`;
 
 export default Button;

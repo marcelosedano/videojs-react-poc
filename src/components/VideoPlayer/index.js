@@ -1,7 +1,9 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import videojs from 'video.js';
 import CustomControlsPortal from '../CustomControls/Portal';
 import CustomControls from '../CustomControls';
+import { Wrapper } from './style';
 
 class VideoPlayer extends Component {
   constructor(props) {
@@ -30,9 +32,13 @@ class VideoPlayer extends Component {
 
   render() {
     const { isPlayerReady } = this.state;
+    const {
+      onCommentsButtonClick,
+      onOverviewButtonClick,
+    } = this.props;
 
     return (
-      <Fragment>
+      <Wrapper>
         <div data-vjs-player>
           <video ref={node => this.videoNode = node} className="video-js">
             <track kind="captions" src="//d2zihajmogu5jn.cloudfront.net/elephantsdream/captions.en.vtt" srcLang="en" label="English" />
@@ -40,12 +46,20 @@ class VideoPlayer extends Component {
         </div>
         {isPlayerReady && (
           <CustomControlsPortal>
-            <CustomControls />
+            <CustomControls
+              onCommentsButtonClick={onCommentsButtonClick}
+              onOverviewButtonClick={onOverviewButtonClick}
+            />
           </CustomControlsPortal>
         )}
-      </Fragment>
+      </Wrapper>
     );
   }
 }
+
+VideoPlayer.propTypes = {
+  onCommentsButtonClick: PropTypes.func.isRequired,
+  onOverviewButtonClick: PropTypes.func.isRequired,
+};
 
 export default VideoPlayer;
