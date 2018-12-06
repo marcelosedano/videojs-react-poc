@@ -1,5 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
-import videoJS from './videoJS';
+import videojs from './videojs';
 
 // Set box-sizing globally to handle padding and border widths
 const all = `
@@ -36,5 +36,5 @@ export const GlobalStyle = createGlobalStyle`
   ${all};
   ${html};
   ${body};
-  ${videoJS};
+  ${videojs};
 `;

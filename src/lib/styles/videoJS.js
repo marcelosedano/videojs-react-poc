@@ -11,6 +11,11 @@ export default `
     width: auto;
     top: -2em;
     height: 2em;
-    background: lightcoral;
+    background: lightblue;
+  }
+
+  .video-js .vjs-custom-control-spacer {
+    display: flex;
+    align-items: center;
   }
 `;
